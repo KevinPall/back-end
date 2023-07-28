@@ -32,11 +32,11 @@ if (file_exists($cheminFichierCSV)) {
     if (!empty($villesTrouvees)) {
         sort($villesTrouvees);
 
-        echo "Villes associées au département $numeroDepartement : \n";
+        print "Villes associées au département $numeroDepartement : \n";
         print_r($villesTrouvees);
     } else {
-        echo 'Aucune ville trouvée pour ce département.';
+        print 'Aucune ville trouvée pour ce département.';
     }
 } else {
-    echo "Le fichier CSV n'existe pas.";
+    print "Le fichier CSV n'existe pas.";
 }

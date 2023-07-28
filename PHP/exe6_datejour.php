@@ -21,11 +21,24 @@ $timestamp = mktime(0, 0, 0, $mois, $jour, $annee);
 // Obtenir les informations détaillées de la date
 $infosDate = getdate($timestamp);
 
+ // Mapper les noms de jours en français
+ $joursEnFrancais = [
+    'Sunday'    => 'Dimanche',
+    'Monday'    => 'Lundi',
+    'Tuesday'   => 'Mardi',
+    'Wednesday' => 'Mercredi',
+    'Thursday'  => 'Jeudi',
+    'Friday'    => 'Vendredi',
+    'Saturday'  => 'Samedi',
+];
+
 // Récupérer le jour de la semaine (en français)
 $jourDeSemaine = $infosDate['weekday'];
+$jourDeSemaineEnFrancais = $joursEnFrancais[$jourDeSemaine];
+
 
 // Afficher le résultat
-echo "Le jour de la semaine correspondant à la date $date est : $jourDeSemaine\n";
+echo "Le jour de la semaine correspondant à la date $date est : $jourDeSemaineEnFrancais" .PHP_EOL;
 } else {
 echo "Format de date incorrect. Veuillez utiliser le format jour/mois/année (par exemple : 27/07/2023).\n";
 }
